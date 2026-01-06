@@ -27,10 +27,11 @@ function App() {
     const fetchPrayerTimes = async () => {
       try {
         // Get today's date in YYYY-MM-DD format
-        const today = new Date().toISOString().split("T")[0];
+        const today = new Date();
+const formattedDate = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
         // Fetch data from Aladhan API using city and country
         const response = await fetch(
-          `https://api.aladhan.com/v1/timingsByCity/${today}?city=${City}&country=Egypt`
+          `https://api.aladhan.com/v1/timingsByCity/${formattedDate}?city=${City}&country=Egypt`
         );
         // Parse the JSON response
         const data_Prayer = await response.json();
