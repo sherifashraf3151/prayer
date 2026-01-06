@@ -97,7 +97,7 @@ function App() {
               {/* Heading for date */}
               <h3>التاريخ</h3>
               {/* Display the current date */}
-              <h4>{DateTime}</h4>
+              <h4>{today}</h4>
             </div>
           </div>
 
